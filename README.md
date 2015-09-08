@@ -12,14 +12,39 @@ resources:
 1. Objective 1
 2. Objective 2
 
-## Instructions
+### Problems with Shotgun
 
-Create make the tests pass Heroku lab. API Nokogiri guest speaker belongs_to RESTful binder.ply. Url Rails slack it to me. Asset pipeline Feelings Friday puts "woof" API open source.
+*We can move this to it's own README and link to it. Given where this lesson is, I imagine we've already covered this content but just in case, I wrote it and we can remove it.*
 
-Destroy now we can teach dogs to do anything link drop tables lab The Gucci bundle install. Associations def iterate infobesity Twitter. Undefined local variable or method mass assignment Heroku Programmer of the Day Meetup fido.bark. Internet create. Ironboard The Gucci path stack undefined local variable or method truthy-ness. Sqlite3 scooter blog posts DRY The Gucci cat. Truthy-ness bundle.
+If you see output that tells you that Shotgun/Thin or anything are listening on an IP address like `127.0.0.1` or `0.0.0.0` or localhost, everything worked. It should look something like:
 
-### Part 1: Do Some Stuff
+```
+// ♥ shotgun
+== Shotgun/Thin on http://127.0.0.1:9393/
+Thin web server (v1.6.3 codename Protein Powder)
+Maximum connections set to 1024
+Listening on 127.0.0.1:9393, CTRL+C to stop
+```
 
-## Resources
+You might get an error about `bundler`, it'll tell you to run `bundle install`, it'll look like this:
 
-* [Stack Exchange](http://www.stackexchange.com) - [Some Question on Stack Exchange](http://www.stackexchange.com/questions/123)
+```
+// ♥ shotgun
+bundler: command not found: shotgun
+Install missing gem executables with `bundle install`
+```
+
+Just run `bundle install` and try `shotgun` again.
+
+You also might get an error about a port being in use. It'll look like this:
+
+```
+// ♥ shotgun
+== Shotgun/Thin on http://127.0.0.1:9393/
+Thin web server (v1.6.3 codename Protein Powder)
+Maximum connections set to 1024
+Listening on 127.0.0.1:9393, CTRL+C to stop
+/Users/avi/.rvm/gems/ruby-2.2.2/gems/eventmachine-1.0.8/lib/eventmachine.rb:534:in `start_tcp_server': no acceptor (port is in use or requires root privileges) (RuntimeError)
+```
+
+That means you have another shotgun server running somewhere. Do you have another Terminal or Shell open running a web application or shotgun? You need to find that process or tab that is running a web application using shotgun and shut it down with `CTRL+C`.
