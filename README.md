@@ -88,7 +88,7 @@ Just run `bundle install` and try `shotgun` again. If you still get the error tr
 $ bundle exec shotgun
 ```
 
-### post in use
+### port in use
 
 You also might get an error about a port being in use. It'll look like this:
 
@@ -102,3 +102,16 @@ Listening on 127.0.0.1:9393, CTRL+C to stop
 ```
 
 This means you have another shotgun server running somewhere. Do you have another Terminal or Shell open running a web application or shotgun? You need to find that process or tab that is running a web application using shotgun and shut it down with `CTRL+C`.
+
+You can also give `shotgun` a different port to use with the `-p` flag.
+
+```
+$ shotgun -p 4200
+== Shotgun/Thin on http://127.0.0.1:4200/
+Thin web server (v1.6.3 codename Protein Powder)
+Maximum connections set to 1024
+Listening on 127.0.0.1:4200, CTRL+C to stop
+```
+
+You'll notice the server started on port `4200` which is hopefully unoccupied. You can supply any port number. But it's best to terminate your servers rather than just start 100s on different ports.
+
