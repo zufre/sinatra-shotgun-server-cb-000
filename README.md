@@ -21,17 +21,16 @@ Pay attention to the line that says `Listening on localhost:9292`. `localhost:92
 
 When starting an application with `rackup`, our application code is read once on boot and never again. Once we start the application locally, if we make changes to our code, our running application server will not read those changes until it is stopped and restarted.
 
-Try adding another controller action to `app.rb`:
+Try adding some more text to the string in the controller action:
 
 ```ruby
-get '/hey' do 
-  "HEY!"
-end
+  get '/' do 
+    "Welcome to your app!!!! I BUILT THIS!"
+  end
 ```
+And refreshing the page in the browser. You should just see `Welcome to your app!!!!`. That's because rack isn't aware that we made changes. You can shut down your server by going back to terminal and hitting `command` + `c`. 
 
-And try going to `localhost:9292/hey` in the browser. You should see the error `Sinatra doesn't know this ditty`. That's because rack isn't aware that we made changes. You can shut down your server by going back to terminal and hitting `command` + `c`. 
-
-Start your server back up by entering `rackup app.rb` and no try visiting `localhost:9292/hey` in the browser. It should work and you should see the text `HEY!` in your browser window.
+Start your server back up by entering `rackup app.rb` and no try visiting `localhost:9292` in the browser. It should work and you should see the text `Welcome to your app!!!! I BUILT THIS!` in your browser window.
 
 This tedious save, stop, and restart cycle makes developing Rack or Sinatra applications near impossible. To avoid this, instead of starting our application with `rackup`, we will use `shotgun`.
 
@@ -53,7 +52,7 @@ Maximum connections set to 1024
 Listening on 127.0.0.1:9393, CTRL+C to stop
 ```
 
-That means your application is loaded and being served from port `9393`, the default shotgun port. The application will respond to requests at `http://127.0.0.1:9393` or more commonly, `localhost:9393` and reload your code on every request until the process is terminated by typing `CTRL+C`.
+That means your application is loaded and being served from port `9393`, the default shotgun port. The application will respond to requests at `http://127.0.0.1:9393` or more commonly, `localhost:9393` and reload your code on every request until the process is terminated by typing `CTRL+C`. Go ahead and visit `localhost:9393` in the browser.
 
 A port is just an endpoint on the server that is open for communication. It's typical for a server to regulate the open ports to make sure it can monitor requests appropriately. You'll notice that with rackup you visited the port `9292` but with shotgun `9393`.
 
@@ -63,15 +62,15 @@ A working server responding to a request and then exiting looks like:
 
 You can pass `shotgun` most CLI arguments and flags that `rackup` accepts.
 
-Now, with your shotgun server still running, make a third controller action in app.rb:
+Now, with your shotgun server still running, change the text in the string in the controller action:
 
 ```ruby
-get '/shotgun'
+get '/
   "Started my server using shotgun!"
 end
 ```
 
-Save your changes to `app.rb` and visit `localhost:9393/shotgun` in the browser. This time, you should see the text `Started my server using shotgun!` as opposed to the error you got when doing the exact same thing using rackup.
+Save your changes to `app.rb` and visit `localhost:9393` in the browser. This time, you should see the text `Started my server using shotgun!` as opposed to seeing the previous text, just like with rackup.
 
 ## Troubleshooting Shotgun
 
