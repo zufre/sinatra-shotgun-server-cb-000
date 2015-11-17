@@ -1,5 +1,6 @@
 tags:
-  - tag1
+  - shotgun
+  - sinatra
+  - rackup
 languages:
-  - language1
-resources: 0
+  - ruby
