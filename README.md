@@ -1,19 +1,22 @@
 # Using the Shotgun Development Server
 
+## Overview
+
+This lesson will introduce you to shotgun and how to use it with Sinatra apps. We'll also cover troubleshooting common problems that you might encounter when running `shotgun`. 
+
 ## Objectives
 
-1. Learn about the shotgun.
-2. Install shotgun
-3. Start/Stop a rack or Sinatra application with shotgun
-4. Troubleshooting shotgun
+1. Explain how using `rackup` to start a Sinatra application will only read the the code once at boot 
+2. Describe how `shotgun` allows for automatic code reloading
+3. Install shotgun and require it in an application's `Gemfile` 
+4. Start and stop a rack or Sinatra application with shotgun
+5. Troubleshoot common `shotgun` including "command not found, "bundler error", and "port in use."
 
-## shotgun
+## Why shotgun
 
-[Shotgun](https://github.com/rtomayko/shotgun) is a small Ruby gem that makes it easier to develop Rack-based Ruby web applications locally by starting Rack with automatic code reloading. A gem is just a library of code that developers wrote and made free and available to the public. This gem let's use start Rack to have a development server running to test our app.
+Normally when we develop simple Rack applications like Sinatra applications, we start our application server with `rackup` and load `config.ru`.
 
-Normally when we develop simple Rack applications (like Sinatra applications, but not like Rails applications), we start our application server with `rackup` and load `config.ru`.
-
-In terminal, go ahead and enter `rackup app.rb`. This will start up a rack server. You should see something like this:
+Fork and clone this lab. In terminal, go ahead and enter `rackup app.rb`. This will start up a rack server. You should see something like this:
 
 <img src="https://s3.amazonaws.com/learn-verified/rackup.png">
 
@@ -21,20 +24,22 @@ Pay attention to the line that says `Listening on localhost:9292`. `localhost:92
 
 When starting an application with `rackup`, our application code is read once on boot and never again. Once we start the application locally, if we make changes to our code, our running application server will not read those changes until it is stopped and restarted.
 
-Try adding some more text to the string in the controller action:
+Now add some more text to the string in the controller action:
 
 ```ruby
   get '/' do 
     "Welcome to your app!!!! I BUILT THIS!"
   end
 ```
-And refreshing the page in the browser. You should just see `Welcome to your app!!!!`. That's because rack isn't aware that we made changes. You can shut down your server by going back to terminal and hitting `cntrl` + `c`. 
+Resfresh the page in the browser. You should just see `Welcome to your app!!!!`. That's because rack isn't aware that we made changes. You can shut down your server by going back to terminal and hitting `ctrl` + `c`. 
 
-Start your server back up by entering `rackup app.rb` and no try visiting `localhost:9292` in the browser. It should work and you should see the text `Welcome to your app!!!! I BUILT THIS!` in your browser window.
+Start your server back up by entering `rackup app.rb` and now try visiting `localhost:9292` in the browser. It should work and you should see the text `Welcome to your app!!!! I BUILT THIS!` in your browser window.
 
 This tedious save, stop, and restart cycle makes developing Rack or Sinatra applications near impossible. To avoid this, instead of starting our application with `rackup`, we will use `shotgun`.
 
-When you start an application with `shotgun`, all of your application code will be reloaded upon every request. That means if you change anything in your code and save it, when you hit 'Refresh' in your browser, your application will responded with the latest version of your code.
+[Shotgun](https://github.com/rtomayko/shotgun) is a small Ruby gem that makes it easier to develop Rack-based Ruby web applications locally by starting Rack with automatic code reloading. A gem is just a library of code that developers wrote and made free and available to the public. This gem let's us start Rack to have a development server running to test our app.
+
+When you start an application with `shotgun`, all of your application code will be reloaded upon every request. That means if you change anything in your code and save it, when you hit 'Refresh' in your browser, your application will respond with the latest version of your code.
 
 ## Installing shotgun
 
@@ -42,7 +47,7 @@ You can install shotgun via `gem install shotgun`. You should also require it in
 
 ## Starting and Stopping shotgun
 
-Within a rack or Sinatra application directory, the directory that contains the application's `config.ru` file, you can start the application via shotgun by simply executing the `shotgun` executable. You should something like:
+Within a rack or Sinatra application directory, you can start the application via shotgun by simply executing `shotgun` in your terminal. You should see something like:
 
 ```
 $ shotgun
@@ -52,7 +57,7 @@ Maximum connections set to 1024
 Listening on 127.0.0.1:9393, CTRL+C to stop
 ```
 
-That means your application is loaded and being served from port `9393`, the default shotgun port. The application will respond to requests at `http://127.0.0.1:9393` or more commonly, `localhost:9393` and reload your code on every request until the process is terminated by typing `CTRL+C`. Go ahead and visit `localhost:9393` in the browser.
+That means your application is loaded and being served from port `9393`, the default shotgun port. The application will respond to requests at `http://127.0.0.1:9393` or more commonly, `localhost:9393` and will reload your code on every request until the process is terminated by typing `CTRL+C`. Go ahead and visit `localhost:9393` in the browser.
 
 A port is just an endpoint on the server that is open for communication. It's typical for a server to regulate the open ports to make sure it can monitor requests appropriately. You'll notice that with rackup you visited the port `9292` but with shotgun `9393`.
 
@@ -60,7 +65,7 @@ A working server responding to a request and then exiting looks like:
 
 ![Shotgun Working](https://dl.dropboxusercontent.com/s/0dwm67kbwvbope1/2015-09-15%20at%2011.12%20PM.png)
 
-You can pass `shotgun` most CLI arguments and flags that `rackup` accepts.
+You can pass to `shotgun` most CLI arguments and flags that `rackup` accepts.
 
 Now, with your shotgun server still running, change the text in the string in the controller action:
 
@@ -103,7 +108,7 @@ $ bundle exec shotgun
 
 ### bundler error
 
-You might get an error about `bundler`, it'll tell you to run `bundle install`, it'll look like this:
+You might get an error about `bundler` that will tell you to run `bundle install`. Tt'll look like this:
 
 ```
 $ shotgun
