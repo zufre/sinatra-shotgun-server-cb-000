@@ -16,7 +16,7 @@ This lesson will introduce you to shotgun and how to use it with Sinatra apps. W
 
 Normally when we develop simple Rack applications like Sinatra applications, we start our application server with `rackup` and load `config.ru`.
 
-Fork and clone this lab. In terminal, go ahead and enter `rackup app.rb`. This will start up a rack server. You should see something like this:
+For the purpose of this lesson, fork and clone this repo. There are, however, no tests to pass. In terminal, go ahead and enter `rackup app.rb`. This will start up a rack server. You should see something like this:
 
 <img src="https://s3.amazonaws.com/learn-verified/rackup.png">
 
