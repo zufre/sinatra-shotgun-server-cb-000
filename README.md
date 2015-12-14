@@ -16,7 +16,7 @@ This lesson will introduce you to shotgun and how to use it with Sinatra apps. W
 
 Normally when we develop simple Rack applications like Sinatra applications, we start our application server with `rackup` and load `config.ru`.
 
-For the purpose of this lesson, fork and clone this repo. There are, however, no tests to pass. In terminal, go ahead and enter `rackup app.rb`. This will start up a rack server. You should see something like this:
++For the purpose of this lesson, fork and clone this repo. There are, however, no tests to pass. In terminal, go ahead and enter `rackup app.rb`. If using Nitrous, run `rackup -o 0.0.0.0 app.rb`. This will start up a rack server. You should see something like this:
 
 <img src="https://s3.amazonaws.com/learn-verified/rackup.png">
 
@@ -47,7 +47,7 @@ You can install shotgun via `gem install shotgun`. You should also require it in
 
 ## Starting and Stopping shotgun
 
-Within a rack or Sinatra application directory, you can start the application via shotgun by simply executing `shotgun` in your terminal. You should see something like:
++Within a rack or Sinatra application directory, you can start the application via shotgun by simply executing `shotgun` in your terminal. Use `shotgun -o 0.0.0.0` within the Nitrous IDE. You should see something like:
 
 ```
 $ shotgun
