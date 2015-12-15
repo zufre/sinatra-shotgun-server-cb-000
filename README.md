@@ -6,7 +6,7 @@ This lesson will introduce you to shotgun and how to use it with Sinatra apps. W
 
 ## Objectives
 
-1. Explain how using `rackup` to start a Sinatra application will only read the the code once at boot 
+1. Explain how using `rackup` to start a Sinatra application will only read the code once at boot 
 2. Describe how `shotgun` allows for automatic code reloading
 3. Install shotgun and require it in an application's `Gemfile` 
 4. Start and stop a rack or Sinatra application with shotgun
