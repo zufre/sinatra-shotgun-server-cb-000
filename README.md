@@ -108,7 +108,8 @@ $ bundle exec shotgun
 
 ### bundler error
 
-You might get an error about `bundler` that will tell you to run `bundle install`. Tt'll look like this:
+You might get an error about `bundler` that will tell you to run `bundle install`. 
+It'll look like this:
 
 ```
 $ shotgun
