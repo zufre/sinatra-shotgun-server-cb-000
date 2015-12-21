@@ -70,7 +70,7 @@ You can pass to `shotgun` most CLI arguments and flags that `rackup` accepts.
 Now, with your shotgun server still running, change the text in the string in the controller action:
 
 ```ruby
-get '/
+get '/' do
   "Started my server using shotgun!"
 end
 ```
