@@ -151,4 +151,4 @@ Listening on 127.0.0.1:4200, CTRL+C to stop
 You'll notice the server started on port `4200` which is hopefully unoccupied. You can supply any port number. But it's best to terminate your servers rather than just start 100s on different ports.
 
 
-<a href='https://learn.co/lessons/sinatra-shotgun-server' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-shotgun-server' title='Using the Shotgun Development Server'>Using the Shotgun Development Server</a> on Learn.co and start learning to code for free.</p>
