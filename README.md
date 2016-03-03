@@ -12,11 +12,15 @@ This lesson will introduce you to shotgun and how to use it with Sinatra apps. W
 4. Start and stop a rack or Sinatra application with shotgun
 5. Troubleshoot common `shotgun` including "command not found, "bundler error", and "port in use."
 
+## Setup
+
+Make sure you run `bundle install` to install the gems in our `Gemfile`. If your operating system is OSX El Capitan, and you have an issue installing `EventMachine`, first check to make sure Open SSL is installed by entering `brew install openssl` in terminal. Once it's installed, enter `brew link openssl --force`.
+
 ## Why shotgun
 
 Normally when we develop simple Rack applications like Sinatra applications, we start our application server with `rackup` and load `config.ru`.
 
-+For the purpose of this lesson, fork and clone this repo. There are, however, no tests to pass. In terminal, go ahead and enter `rackup app.rb`. If using Nitrous, run `rackup -o 0.0.0.0 app.rb`. This will start up a rack server. You should see something like this:
+For the purpose of this lesson, fork and clone this repo. There are, however, no tests to pass. In terminal, go ahead and enter `rackup app.rb`. If using Nitrous, run `rackup -o 0.0.0.0 app.rb`. This will start up a rack server. You should see something like this:
 
 <img src="https://s3.amazonaws.com/learn-verified/rackup.png">
 
