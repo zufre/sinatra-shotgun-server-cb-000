@@ -79,7 +79,7 @@ get '/' do
 end
 ```
 
-Save your changes to `app.rb` and visit `localhost:9393` in the browser. This time, you should see the text `Started my server using shotgun!` as opposed to seeing the previous text, just like with rackup.
+Save your changes to `app.rb` and visit `localhost:9393` in the browser. Hit 'Refresh' in your browser to make a new request. This time, you should see the text `Started my server using shotgun!` as opposed to seeing the previous text, just like with rackup.
 
 ## Troubleshooting Shotgun
 
