@@ -35,7 +35,7 @@ Now add some more text to the string in the controller action:
     "Welcome to your app!!!! I BUILT THIS!"
   end
 ```
-Resfresh the page in the browser. You should just see `Welcome to your app!!!!`. That's because rack isn't aware that we made changes. You can shut down your server by going back to terminal and hitting `ctrl` + `c`. 
+Refresh the page in the browser. You should just see `Welcome to your app!!!!`. That's because rack isn't aware that we made changes. You can shut down your server by going back to terminal and hitting `ctrl` + `c`. 
 
 Start your server back up by entering `rackup app.rb` and now try visiting `localhost:9292` in the browser. It should work and you should see the text `Welcome to your app!!!! I BUILT THIS!` in your browser window.
 
@@ -156,3 +156,5 @@ You'll notice the server started on port `4200` which is hopefully unoccupied. Y
 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-shotgun-server' title='Using the Shotgun Development Server'>Using the Shotgun Development Server</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/sinatra-shotgun-server'>Using the Shotgun Development Server</a> on Learn.co and start learning to code for free.</p>
