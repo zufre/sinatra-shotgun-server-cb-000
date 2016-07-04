@@ -51,7 +51,7 @@ You can install shotgun via `gem install shotgun`. You should also require it in
 
 ## Starting and Stopping shotgun
 
-+Within a rack or Sinatra application directory, you can start the application via shotgun by simply executing `shotgun` in your terminal. Use `shotgun -o 0.0.0.0` within the Nitrous IDE. You should see something like:
+Within a rack or Sinatra application directory, you can start the application via shotgun by simply executing `shotgun` in your terminal. Use `shotgun -o 0.0.0.0` within the Nitrous IDE. You should see something like:
 
 ```
 $ shotgun
