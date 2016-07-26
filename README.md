@@ -20,7 +20,7 @@ Make sure you run `bundle install` to install the gems in our `Gemfile`. If your
 
 Normally when we develop simple Rack applications like Sinatra applications, we start our application server with `rackup` and load `config.ru`.
 
-For the purpose of this lesson, fork and clone this repo. There are, however, no tests to pass. In terminal, go ahead and enter `rackup app.rb`. If using Nitrous, run `rackup -o 0.0.0.0 app.rb`. This will start up a rack server. You should see something like this:
+For the purpose of this lesson, fork and clone this repo. There are, however, no tests to pass. In your terminal, go ahead and enter `rackup app.rb`. This will start up a rack server. You should see something like this:
 
 <img src="https://s3.amazonaws.com/learn-verified/rackup.png">
 
@@ -51,7 +51,7 @@ You can install shotgun via `gem install shotgun`. You should also require it in
 
 ## Starting and Stopping shotgun
 
-Within a rack or Sinatra application directory, you can start the application via shotgun by simply executing `shotgun` in your terminal. Use `shotgun -o 0.0.0.0` within the Nitrous IDE. You should see something like:
+Within a rack or Sinatra application directory, you can start the application via shotgun by simply executing `shotgun` in your terminal. You should see something like:
 
 ```
 $ shotgun
@@ -154,7 +154,5 @@ Listening on 127.0.0.1:4200, CTRL+C to stop
 
 You'll notice the server started on port `4200` which is hopefully unoccupied. You can supply any port number. But it's best to terminate your servers rather than just start 100s on different ports.
 
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/sinatra-shotgun-server' title='Using the Shotgun Development Server'>Using the Shotgun Development Server</a> on Learn.co and start learning to code for free.</p>
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/sinatra-shotgun-server'>Using the Shotgun Development Server</a> on Learn.co and start learning to code for free.</p>
