@@ -10,7 +10,7 @@ This lesson will introduce you to shotgun and how to use it with Sinatra apps. W
 2. Describe how `shotgun` allows for automatic code reloading
 3. Install shotgun and require it in an application's `Gemfile` 
 4. Start and stop a rack or Sinatra application with shotgun
-5. Troubleshoot common `shotgun` including "command not found, "bundler error", and "port in use."
+5. Troubleshoot common `shotgun` errors including "command not found, "bundler error", and "port in use."
 
 ## Setup
 
